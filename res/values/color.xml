@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <color name="pressedColor">#AADDDDDD</color>
+    <color name="orange">#FE7012</color>
+    <color name="gray">#888888</color>
+    <color name="blue">#7ECFFE</color>
+    <color name="line">#88DDDDDD</color>
+    <color name="red">#FE4445</color>
+    <color name="default_bg">#EEEEEE</color>
+    
+</resources>

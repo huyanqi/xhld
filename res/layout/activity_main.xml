@@ -1,0 +1,107 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E5E5E5"
+    android:orientation="vertical" >
+
+    <com.xhld.widget.MyViewPager 
+        android:id="@+id/viewpager"
+		android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        
+        <TextView 
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/do1"
+            android:background="#DEDEDE"/>
+        
+        <LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:background="@android:color/white"
+	        android:orientation="horizontal" >
+	
+	        <LinearLayout
+	            android:id="@+id/show_tab1"
+	            android:layout_width="0dp"
+	            android:layout_height="match_parent"
+	            android:layout_weight="1"
+	            android:gravity="center"
+	            android:orientation="vertical"
+	            android:padding="2dp" >
+	
+	            <ImageView
+	                android:id="@+id/tab_iv"
+	                android:layout_width="30dp"
+	                android:layout_height="30dp"
+	                android:src="@drawable/tab1_press"/>
+	
+	            <TextView
+	                android:id="@+id/tab_tv"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_marginTop="1dp"
+	                android:text="电话"
+	                android:textColor="@drawable/tab_tvcolor_press"
+	                android:textSize="@dimen/tab_tv_size" />
+	        </LinearLayout>
+	
+	        <LinearLayout
+	            android:id="@+id/show_tab2"
+	            android:layout_width="0dp"
+	            android:layout_height="match_parent"
+	            android:layout_weight="1"
+	            android:gravity="center"
+	            android:orientation="vertical"
+	            android:padding="2dp" >
+	
+	            <ImageView
+	                android:id="@+id/tab_iv"
+	                android:layout_width="30dp"
+	                android:layout_height="30dp"
+	                android:src="@drawable/tab2_press"/>
+	
+	            <TextView
+	                android:id="@+id/tab_tv"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_marginTop="1dp"
+	                android:text="小合利贷"
+	                android:textColor="@drawable/tab_tvcolor_press"
+	                android:textSize="@dimen/tab_tv_size" />
+	        </LinearLayout>
+	
+	        <LinearLayout
+	            android:id="@+id/show_tab3"
+	            android:layout_width="0dp"
+	            android:layout_height="match_parent"
+	            android:layout_weight="1"
+	            android:gravity="center"
+	            android:orientation="vertical"
+	            android:padding="2dp" >
+	
+	            <ImageView
+	                android:id="@+id/tab_iv"
+	                android:layout_width="30dp"
+	                android:layout_height="30dp"
+	                android:background="@drawable/tab4_press"/>
+	
+	            <TextView
+	                android:id="@+id/tab_tv"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_marginTop="1dp"
+	                android:text="我的"
+	                android:textColor="@drawable/tab_tvcolor_press"
+	                android:textSize="@dimen/tab_tv_size" />
+	        </LinearLayout>
+	    </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

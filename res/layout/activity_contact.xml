@@ -1,0 +1,60 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E5E5E5"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/keyboard_top_item_bg"
+        android:gravity="center_vertical"
+        android:padding="5dp"
+        android:orientation="horizontal" >
+        
+        <RelativeLayout 
+		        android:layout_width="0dp"
+		        android:layout_weight="1"
+		        android:layout_height="40dp"
+		        android:clickable="true"
+		        android:background="@android:color/white">
+		        
+		        <ImageView 
+		            android:id="@+id/temp_iv"
+		            android:layout_width="13dp"
+		            android:layout_height="13dp"
+		            android:layout_centerVertical="true"
+		            android:layout_marginLeft="10dp"
+		            android:src="@drawable/ui_icon_search"/>
+		        
+		        <EditText 
+		            android:id="@+id/contact_et"
+		            android:layout_width="match_parent"
+		            android:layout_height="match_parent"
+		            android:layout_toRightOf="@id/temp_iv"
+		            android:layout_marginLeft="10dp"
+		            android:paddingLeft="5dp"
+		            android:background="@null"
+		            android:hint="搜索"
+		            android:singleLine="true"/>
+		        
+		    </RelativeLayout>
+            
+            <ImageView 
+                android:id="@+id/number_del"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="5dp"
+                android:src="@drawable/dial_digitbar_del_normal"/>
+        
+    </LinearLayout>
+    
+    <ExpandableListView 
+        android:id="@+id/listview"
+        android:layout_marginTop="5dp"
+        style="@style/xlistview_style"
+        android:dividerHeight="0.1dp"
+        android:divider="@color/gray"/>
+
+</LinearLayout>

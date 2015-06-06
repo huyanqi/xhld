@@ -1,0 +1,110 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView 
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/call_bg"/>
+    
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+    	android:orientation="vertical">
+    
+	    <RelativeLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:paddingTop="20sp"
+	        android:paddingLeft="10dp"
+	        android:paddingRight="10dp"
+	        android:paddingBottom="10dp"
+	        android:background="#33ffffff"
+	        android:gravity="center_vertical"
+	        android:orientation="vertical">
+		    <TextView 
+		        android:id="@+id/call_name"
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:textSize="30sp"
+		        android:gravity="center_horizontal"
+		        android:textColor="#AA333333"/>
+		    
+		    <TextView 
+		        android:id="@+id/call_num"
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:layout_below="@id/call_name"
+		        android:layout_alignLeft="@id/call_name"
+		        android:layout_marginTop="10dp"
+		        android:gravity="center_horizontal"
+		        android:textSize="18sp"
+		        android:textColor="#AA333333"/>
+		    
+	    </RelativeLayout>
+	    
+	    <com.xhld.widget.SYNCImageView 
+	        android:id="@+id/img"
+	        android:layout_width="match_parent"
+	        android:layout_height="0dp"
+	        android:scaleType="fitXY"
+	        android:layout_weight="1"/>
+	    
+		<!-- android:background="#33000000" -->
+	    <TextView 
+			android:id="@+id/status_tv"
+			android:layout_width="match_parent"
+			android:layout_height="70dp"
+			android:padding="5dp"
+			android:gravity="center"
+			android:textSize="18sp"
+			android:textColor="#DDDDDD"
+			android:layout_alignParentRight="true"
+			android:layout_below="@id/call_num"
+			android:text="正在接通中..."/>
+	    
+	    <RelativeLayout 
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content">
+		    
+	        <ImageView 
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	        	android:src="@drawable/call_bottom_bg"/>
+	        
+	        <LinearLayout 
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:layout_centerVertical="true"
+	            android:orientation="horizontal">
+	            <LinearLayout 
+	                android:layout_width="0dp"
+	                android:layout_weight="1"
+	                android:layout_height="match_parent"
+	                android:gravity="center">
+	                <ImageView 
+			            android:layout_width="22dp"
+			            android:layout_height="30dp"
+			            android:layout_marginRight="30dp"
+			            android:src="@drawable/call_mcphone"/>
+	            </LinearLayout>
+	            <LinearLayout 
+	                android:layout_width="0dp"
+	                android:layout_height="match_parent"
+	                android:layout_weight="1"
+	                android:gravity="center">
+	                <ImageView 
+			            android:layout_width="26dp"
+			            android:layout_height="24dp"
+			            android:layout_marginLeft="30dp"
+			            android:src="@drawable/call_volume"/>
+	            </LinearLayout>
+	        </LinearLayout>
+	        
+        </RelativeLayout>
+	    
+    </LinearLayout>
+    
+</FrameLayout>

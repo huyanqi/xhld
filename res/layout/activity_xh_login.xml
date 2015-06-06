@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical" >
+    
+    <EditText 
+        android:id="@+id/username"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:hint="请输入小合利贷账号"
+        android:singleLine="true"
+        android:padding="5dp"
+        android:textSize="14sp"
+        android:background="@drawable/pay_et_bg"/>
+    
+    <EditText 
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:hint="请输入小合利贷密码"
+        android:password="true"
+        android:singleLine="true"
+        android:padding="5dp"
+        android:textSize="14sp"
+        android:background="@drawable/pay_et_bg"/>
+    
+    <Button 
+        android:id="@+id/submit"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:textColor="@android:color/white"
+        android:background="@drawable/pay_btn"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:textSize="14sp"
+        android:onClick="onClick"
+        android:text="登录"/>
+    
+    <TextView 
+        android:id="@+id/reg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="right"
+        android:layout_marginRight="50dp"
+        android:textColor="@color/gray"
+        android:text="注册"/>
+
+</LinearLayout>

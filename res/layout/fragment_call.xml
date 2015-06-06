@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+	    <RelativeLayout 
+	        android:layout_width="match_parent"
+	        android:layout_height="42dp"
+	        android:background="@drawable/list_item_bg_press">
+	        
+	        <Button 
+                android:id="@+id/to_pay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_centerVertical="true"
+                android:text="充值"
+                android:textSize="14sp"
+                android:textColor="@android:color/black"
+                android:gravity="left|center_vertical"
+                android:background="@null"/>
+	        
+	        <TextView 
+	            android:id="@+id/call_top_name"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_centerInParent="true"
+	            android:gravity="center"
+	            android:text="最近通话"
+	            android:textSize="16sp"/>
+	        
+	        <LinearLayout 
+	            android:id="@+id/balance_ly"
+	            android:layout_width="wrap_content"
+	            android:layout_height="match_parent"
+	            android:layout_alignParentRight="true"
+	            android:layout_centerVertical="true"
+	            android:padding="5dp"
+	            android:orientation="horizontal"
+	            android:gravity="center_vertical">
+	            <ImageView 
+	                android:layout_width="18dp"
+	                android:layout_height="18dp"
+	                android:src="@drawable/icon_money"/>
+		        <TextView 
+		            android:id="@+id/balance_tv"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"/>
+	        </LinearLayout>
+	        
+	    </RelativeLayout>
+	    
+	    <ListView
+	        android:id="@+id/call_records_listview"
+	        style="@style/xlistview_style"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/keyboard_ly"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="vertical"
+        android:clickable="true"
+        android:background="@color/gray" >
+        
+        <LinearLayout 
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:background="@drawable/keyboard_top_item_bg"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+            <!-- <ImageView 
+                android:id="@+id/close_keyboard"
+                android:layout_width="57dp"
+                android:layout_height="45dp"
+                android:src="@drawable/dial_digitbar_switch_normal"/> -->
+            
+            <EditText 
+                android:id="@+id/number_et"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:background="@drawable/common_edittext_1"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:gravity="center"
+                android:textSize="28sp"
+                android:clickable="false"
+                android:focusable="false"
+                android:textColorHint="#33333333"
+                android:hint="固话请加拨区号"
+                android:cursorVisible="true"
+                android:paddingLeft="5dp"/>
+            
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+            <Button
+                style="@style/keyboard"
+                android:onClick="keyBoardClick"
+                android:tag="1"
+                android:text="1" />
+            <Button
+                style="@style/keyboard"
+                android:onClick="keyBoardClick"
+                android:tag="2"
+                android:text="2" />
+            <Button
+                style="@style/keyboard"
+                android:onClick="keyBoardClick"
+                android:tag="3"
+                android:text="3" />
+        </LinearLayout>
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+            <Button
+                style="@style/keyboard"
+                android:onClick="keyBoardClick"
+                android:tag="4"
+                android:text="4" />
+            <Button
+                style="@style/keyboard"
+                android:onClick="keyBoardClick"
+                android:tag="5"
+                android:text="5" />
+            <Button
+                style="@style/keyboard"
+                android:onClick="keyBoardClick"
+                android:tag="6"
+                android:text="6" />
+        </LinearLayout>
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+            <Button
+                style="@style/keyboard"
+                android:onClick="keyBoardClick"
+                android:tag="7"
+                android:text="7" />
+            <Button
+                style="@style/keyboard"
+                android:onClick="keyBoardClick"
+                android:tag="8"
+                android:text="8" />
+            <Button
+                style="@style/keyboard"
+                android:onClick="keyBoardClick"
+                android:tag="9"
+                android:text="9" />
+        </LinearLayout>
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+            <Button
+                style="@style/keyboard"
+                android:onClick="keyBoardClick"
+                android:tag="*"
+                android:text="*" />
+            <Button
+                style="@style/keyboard"
+                android:onClick="keyBoardClick"
+                android:tag="0"
+                android:text="0" />
+            <Button
+                style="@style/keyboard"
+                android:onClick="keyBoardClick"
+                android:tag="#"
+                android:text="#" />
+        </LinearLayout>
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/callslog_keyboard_bg_normal"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+            
+            <LinearLayout 
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:gravity="center">
+	            <Button 
+	                android:id="@+id/to_contact"
+	                android:layout_width="40dp"
+	                android:layout_height="40dp"
+	                android:background="@drawable/icon_contact"/>
+            </LinearLayout>
+            
+            <LinearLayout 
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="44dp"
+                android:gravity="center">
+	            <Button 
+	                android:id="@+id/call_btn"
+	                android:layout_width="match_parent"
+	                android:layout_height="match_parent"
+	                android:background="@drawable/call_btn_selector"
+	                android:textColor="@android:color/white"
+	                android:textSize="20sp"/>
+            </LinearLayout>
+            
+            <LinearLayout 
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:gravity="center">
+	            <ImageView 
+	                android:id="@+id/number_del"
+	                android:layout_width="40dp"
+	                android:layout_height="40dp"
+	                android:src="@drawable/dial_digitbar_del_normal"/>
+            </LinearLayout>
+            
+        </LinearLayout>
+    </LinearLayout>
+
+</FrameLayout>

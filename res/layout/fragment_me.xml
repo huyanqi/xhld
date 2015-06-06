@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <com.xhld.widget.SYNCImageView
+        android:id="@+id/top_ad"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/top_ad_height"
+        android:scaleType="centerCrop" />
+
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+        
+        <LinearLayout 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+            <LinearLayout 
+                android:layout_width="60dp"
+                android:layout_height="130dp"
+                android:background="@color/red"
+                android:gravity="center">
+                
+                <com.xhld.widget.CircleImageView 
+                    android:layout_width="55dp"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/ic_launcher"/>
+                
+            </LinearLayout>
+            <TextView 
+                android:layout_width="60dp"
+                android:layout_height="6dp"
+                android:background="#55FE4445"
+                android:layout_marginTop="3dp"/>
+        </LinearLayout>
+        
+        <LinearLayout 
+            android:id="@+id/zijin_ly"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:paddingTop="5dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="5dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+            
+            <ImageView 
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/icon_woyaotixian"/>
+            
+            <TextView 
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="20dp"
+                android:textSize="16sp"
+                android:text="资金管理"/>
+            
+            <ImageView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_arrow_right"/>
+            
+        </LinearLayout>
+        
+        <TextView style="@style/line"/>
+        
+        <LinearLayout 
+            android:id="@+id/touzi_ly"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:paddingTop="5dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="5dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+            
+            <ImageView 
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/icon_shenqingchongzhi"/>
+            
+            <TextView 
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="20dp"
+                android:textSize="16sp"
+                android:text="投资管理"/>
+            
+            <ImageView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_arrow_right"/>
+            
+        </LinearLayout>
+        
+        <TextView style="@style/line"/>
+        
+        <LinearLayout 
+            android:id="@+id/jiekuan_ly"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:paddingTop="5dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="5dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+            
+            <ImageView 
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/icon_zijinjilu"/>
+            
+            <TextView 
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="20dp"
+                android:textSize="16sp"
+                android:text="借款管理"/>
+            
+            <ImageView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_arrow_right"/>
+            
+        </LinearLayout>
+        
+        <TextView style="@style/line"/>
+        
+        <LinearLayout 
+            android:id="@+id/zhanghu_ly"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:paddingTop="5dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="5dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+            
+            <ImageView 
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/icon_lianxirenxinxi"/>
+            
+            <TextView 
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="20dp"
+                android:textSize="16sp"
+                android:text="账户管理"/>
+            
+            <ImageView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_arrow_right"/>
+            
+        </LinearLayout>
+        
+    </LinearLayout>
+    
+    <TextView 
+        android:id="@+id/change_pwd"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:padding="10dp"
+		android:clickable="true"
+		android:background="@drawable/normal_btn_selector"
+		android:text="修改密码"
+		android:gravity="center"/>
+    <TextView 
+        android:id="@+id/log_out"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:padding="10dp"
+		android:clickable="true"
+		android:layout_marginTop="3dp"
+		android:background="@drawable/normal_btn_selector"
+		android:text="注销"
+		android:gravity="center"/>
+
+</LinearLayout>
