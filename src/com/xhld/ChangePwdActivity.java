@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.EditText;
 
+import com.google.gson.Gson;
 import com.xhld.base.BaseActivity;
 import com.xhld.bean.UserModel;
 import com.xhld.utils.NetTools;
@@ -39,8 +40,8 @@ public class ChangePwdActivity extends BaseActivity implements OnClickListener{
 	@Override
 	public void onClick(View v) {
 		String oldPwdString = oldPwd.getText().toString();
-		String newPwdString = newPwd.getText().toString();
-		String newPwdRString = newPwdR.getText().toString();
+		final String newPwdString = newPwd.getText().toString();
+		final String newPwdRString = newPwdR.getText().toString();
 		if("".equals(oldPwdString) || "".equals(newPwdString) || "".equals(newPwdRString)){
 			showToast("每项必填");
 			return;
@@ -53,13 +54,12 @@ public class ChangePwdActivity extends BaseActivity implements OnClickListener{
 			showToast("密码必须大于6位数");
 			return;
 		}
-		UserModel user = Tools.getUser(this);
+		final UserModel user = Tools.getUser(this);
 		Map<String, Object> param = new HashMap<String, Object>();
-		param.put("mobile", user.mobile);
 		param.put("oldPwd", oldPwdString);
 		param.put("newPwd", newPwdString);
 		processDialog.show();
-		NetTools.getDataFromNetwork(this,"changePwd", param, new NetToolCallBack() {
+		NetTools.getXHDataFromNetwork(this,"updateUserPwd", param, new NetToolCallBack() {
 			@Override
 			public void error(String error) {
 				processDialog.dismiss();
@@ -69,15 +69,21 @@ public class ChangePwdActivity extends BaseActivity implements OnClickListener{
 			@Override
 			public void callBack(JSONObject result) {
 				processDialog.dismiss();
-				if (Tools.isOk(result)) {
-					showToast("密码修改成功");
-					finish();
-				}else{
-					try {
-						showToast(result.getString("msg"));
-					} catch (JSONException e) {
-						e.printStackTrace();
+				try {
+					result = result.getJSONObject("result");
+					if(result.getInt("statusCode") == 200){
+						Gson gson = new Gson();
+						Tools.saveXHUser(ChangePwdActivity.this, user.mobile, newPwdString);
+						UserModel model = Tools.getUser(ChangePwdActivity.this);
+						model.password = newPwdRString;
+						Tools.saveUser(ChangePwdActivity.this, new JSONObject(gson.toJson(model)));
+						showToast("密码修改成功");
+						finish();
+					}else{
+						showToast(result.getString("message"));
 					}
+				} catch (JSONException e1) {
+					e1.printStackTrace();
 				}
 			}
 		},false);

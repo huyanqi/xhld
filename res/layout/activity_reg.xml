@@ -90,6 +90,38 @@
                     android:layout_height="12dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="8dp"
+                    android:background="@drawable/ui_login_password_img" />
+
+                <EditText
+                    android:id="@+id/reg_password2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:gravity="center_vertical"
+                    android:textColor="#ffffff"
+                    android:inputType="textPassword"
+                    android:hint="确认密码"
+                    android:singleLine="true" />
+            </LinearLayout>
+            
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ui_login_input_line" />
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="3dp" >
+
+                <ImageView
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="8dp"
                     android:background="@drawable/ui_login_card" />
 
                 <EditText
@@ -174,6 +206,7 @@
                     android:gravity="center_vertical"
                     android:textColor="#ffffff"
                     android:hint="手机获取的验证码"
+                    android:numeric="integer"
                     android:singleLine="true" />
                 
             </LinearLayout>

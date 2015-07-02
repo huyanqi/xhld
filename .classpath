@@ -5,5 +5,12 @@
 	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
+	<classpathentry kind="lib" path="libs/android-support-v4.jar"/>
+	<classpathentry kind="lib" path="libs/gson-2.2.4.jar"/>
+	<classpathentry kind="lib" path="libs/pinyin4j-2.5.0.jar"/>
+	<classpathentry kind="lib" path="libs/prettytime-2.1.3.Final.jar"/>
+	<classpathentry kind="lib" path="libs/testinagent.jar"/>
+	<classpathentry kind="lib" path="libs/universal-image-loader-1.9.3-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="libs/Bughd_android_sdk_v1.2.5.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

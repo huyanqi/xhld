@@ -149,7 +149,7 @@ public class MainActivity extends BaseFragmentActivity implements OnClickListene
 	private void loadFragment(){
 		fragments = new ArrayList<Fragment>();
 		
-		callFragment = new CallFragment(this);
+		callFragment = CallFragment.getInstance(this);
 		xhFragment = new XHFragment();
 		meFragment = new MeFragment(this);
 		

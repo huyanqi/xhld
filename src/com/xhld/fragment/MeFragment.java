@@ -21,7 +21,14 @@ import com.xhld.ChangePwdActivity;
 import com.xhld.LoginActivity;
 import com.xhld.MainActivity;
 import com.xhld.R;
+import com.xhld.XHJiBenXinXi;
+import com.xhld.XHJieKuanJiLu;
+import com.xhld.XHJieKuanShenQing;
+import com.xhld.XHLianXiRenXinXi;
 import com.xhld.XHLoginActivity;
+import com.xhld.XHShenQingJiLu;
+import com.xhld.XHTouZiGuanLiActivity;
+import com.xhld.XHXiangXiXinXi;
 import com.xhld.bean.AdModel;
 import com.xhld.utils.NetTools;
 import com.xhld.utils.Tools;
@@ -40,7 +47,7 @@ public class MeFragment extends Fragment implements View.OnClickListener
 
   public MeFragment(MainActivity activity){
 		this.mActivity = activity;
-}
+  }
 
   private void initWidget()
   {
@@ -146,7 +153,7 @@ public class MeFragment extends Fragment implements View.OnClickListener
         this.mActivity.startActivityForResult(new Intent(this.mActivity, XHLoginActivity.class), 1024);
         break;
       }
-      //startActivity(new Intent(this.mActivity, XHTouZiGuanLiActivity.class));
+      startActivity(new Intent(this.mActivity, XHTouZiGuanLiActivity.class));
       break;
     case R.id.jiekuan_ly:
       if (!Tools.XHUserIsExist(this.mActivity))
@@ -165,17 +172,17 @@ public class MeFragment extends Fragment implements View.OnClickListener
 				
 				@Override
 				public void tab3Clicked() {
-					
+					startActivity(new Intent(mActivity,XHJieKuanJiLu.class));
 				}
 				
 				@Override
 				public void tab2Clicked() {
-					
+					startActivity(new Intent(mActivity,XHShenQingJiLu.class));
 				}
 				
 				@Override
 				public void tab1Clicked() {
-					
+					startActivity(new Intent(mActivity,XHJieKuanShenQing.class));
 				}
 			});
       this.jiekuanPop.showAtLocation(this.view, Gravity.TOP, 0, 0);
@@ -197,17 +204,17 @@ public class MeFragment extends Fragment implements View.OnClickListener
 				
 				@Override
 				public void tab3Clicked() {
-					
+					startActivity(new Intent(mActivity,XHLianXiRenXinXi.class));
 				}
 				
 				@Override
 				public void tab2Clicked() {
-					
+					startActivity(new Intent(mActivity,XHXiangXiXinXi.class));
 				}
 				
 				@Override
 				public void tab1Clicked() {
-					
+					startActivity(new Intent(mActivity,XHJiBenXinXi.class));
 				}
 			});
         this.zhanghuPop.showAtLocation(this.view, Gravity.TOP, 0, 0);

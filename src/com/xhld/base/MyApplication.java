@@ -1,13 +1,13 @@
 package com.xhld.base;
 
-import im.fir.sdk.FirSdk;
+import im.fir.sdk.FIR;
 import android.app.Application;
 
 public class MyApplication extends Application {
 	
 	@Override
 	public void onCreate() {
-		FirSdk.init(this);
+		FIR.init(this);
 		super.onCreate();
 	}
 }

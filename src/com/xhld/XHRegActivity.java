@@ -95,7 +95,7 @@ public class XHRegActivity extends BaseActivity
             Intent localIntent = new Intent();
             localIntent.putExtra("username", XHRegActivity.this.reg_username.getText().toString());
             localIntent.putExtra("password", XHRegActivity.this.reg_password.getText().toString());
-            XHRegActivity.this.setResult(-1, localIntent);
+            XHRegActivity.this.setResult(RESULT_OK, localIntent);
             XHRegActivity.this.finish();
             return;
           }

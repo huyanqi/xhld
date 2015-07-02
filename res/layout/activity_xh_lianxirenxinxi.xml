@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    
+	<LinearLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:orientation="vertical" >
+	    
+	    <TextView 
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:padding="20dp"
+	        android:textColor="@color/red"
+	        android:text="以下所有信息均为必填，请认真填写并确保填写内容的真实性，一旦发现虚假信息，将影响您的个人信用！"/>
+	    
+	    <LinearLayout 
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:paddingLeft="20dp"
+	        android:paddingTop="10dp"
+	        android:paddingRight="20dp"
+	        android:paddingBottom="10dp"
+	        android:gravity="center_vertical"
+	        android:orientation="horizontal">
+	        
+	        <TextView 
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="直系亲属："/>
+	        
+	        <EditText 
+	            android:id="@+id/family1Name"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:singleLine="true"/>
+	        
+	    </LinearLayout>
+	    
+	    <LinearLayout 
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:paddingLeft="20dp"
+	        android:paddingTop="10dp"
+	        android:paddingRight="20dp"
+	        android:paddingBottom="10dp"
+	        android:gravity="center_vertical"
+	        android:orientation="horizontal">
+	        
+	        <TextView 
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="    关系："/>
+	        
+	        <Spinner 
+	            android:id="@+id/family1Sp"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:gravity="right"
+	            android:entries="@array/relation"/>
+	        
+	    </LinearLayout>
+	    
+	    <LinearLayout 
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:paddingLeft="20dp"
+	        android:paddingTop="10dp"
+	        android:paddingRight="20dp"
+	        android:paddingBottom="10dp"
+	        android:gravity="center_vertical"
+	        android:orientation="horizontal">
+	        
+	        <TextView 
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="联系电话："/>
+	        
+	        <EditText 
+	            android:id="@+id/family1Mobi"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:singleLine="true"/>
+	        
+	    </LinearLayout>
+	    
+	    <TextView style="@style/line"/>
+	    
+	    <LinearLayout 
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:paddingLeft="20dp"
+	        android:paddingTop="10dp"
+	        android:paddingRight="20dp"
+	        android:paddingBottom="10dp"
+	        android:gravity="center_vertical"
+	        android:orientation="horizontal">
+	        
+	        <TextView 
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="直系亲属："/>
+	        
+	        <EditText 
+	            android:id="@+id/family2Name"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:singleLine="true"/>
+	        
+	    </LinearLayout>
+	    
+	    <LinearLayout 
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:paddingLeft="20dp"
+	        android:paddingTop="10dp"
+	        android:paddingRight="20dp"
+	        android:paddingBottom="10dp"
+	        android:gravity="center_vertical"
+	        android:orientation="horizontal">
+	        
+	        <TextView 
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="    关系："/>
+	        
+	        <Spinner 
+	            android:id="@+id/family2Sp"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:gravity="right"
+	            android:entries="@array/relation"/>
+	        
+	    </LinearLayout>
+	    
+	    <LinearLayout 
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:paddingLeft="20dp"
+	        android:paddingTop="10dp"
+	        android:paddingRight="20dp"
+	        android:paddingBottom="10dp"
+	        android:gravity="center_vertical"
+	        android:orientation="horizontal">
+	        
+	        <TextView 
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="联系电话："/>
+	        
+	        <EditText 
+	            android:id="@+id/family2Mobi"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:singleLine="true"/>
+	        
+	    </LinearLayout>
+	    
+	    <TextView style="@style/line"/>
+	    
+	    <LinearLayout 
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:paddingLeft="20dp"
+	        android:paddingTop="10dp"
+	        android:paddingRight="20dp"
+	        android:paddingBottom="10dp"
+	        android:gravity="center_vertical"
+	        android:orientation="horizontal">
+	        
+	        <TextView 
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="其他联系人："/>
+	        
+	        <EditText 
+	            android:id="@+id/family3Name"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:singleLine="true"/>
+	        
+	    </LinearLayout>
+	    
+	    <LinearLayout 
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:paddingLeft="20dp"
+	        android:paddingTop="10dp"
+	        android:paddingRight="20dp"
+	        android:paddingBottom="10dp"
+	        android:gravity="center_vertical"
+	        android:orientation="horizontal">
+	        
+	        <TextView 
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="    关系："/>
+	        
+	        <Spinner 
+	            android:id="@+id/family3Sp"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:gravity="right"
+	            android:entries="@array/relation"/>
+	        
+	    </LinearLayout>
+	    
+	    <LinearLayout 
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:paddingLeft="20dp"
+	        android:paddingTop="10dp"
+	        android:paddingRight="20dp"
+	        android:paddingBottom="10dp"
+	        android:gravity="center_vertical"
+	        android:orientation="horizontal">
+	        
+	        <TextView 
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="联系电话："/>
+	        
+	        <EditText 
+	            android:id="@+id/family3Mobi"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:singleLine="true"/>
+	        
+	    </LinearLayout>
+	    
+	    <TextView style="@style/line"/>
+	    
+	    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="10dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="其他联系人："/>
+        
+        <EditText 
+            android:id="@+id/family4Name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"/>
+        
+    </LinearLayout>
+    
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="10dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="    关系："/>
+        
+        <Spinner 
+            android:id="@+id/family4Sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:entries="@array/relation"/>
+        
+    </LinearLayout>
+    
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="10dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="联系电话："/>
+        
+        <EditText 
+            android:id="@+id/family4Mobi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"/>
+        
+    </LinearLayout>
+    
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp">
+	    <Button 
+	        android:id="@+id/submit"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:textColor="@android:color/white"
+	        android:textSize="14sp"
+	        android:onClick="onClick"
+	        android:background="@color/red"
+	        android:text="保存"/>
+    </LinearLayout>
+	
+	</LinearLayout>
+</ScrollView>

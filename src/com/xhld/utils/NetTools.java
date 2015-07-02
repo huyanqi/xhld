@@ -32,6 +32,7 @@ public class NetTools {
 
 	public static final String HOST = "http://202.98.133.37/";
 	public static final String XHHOST = "http://www.xiaohelidai.com/app/";
+	public static final String XHHOST2 = "http://www.xiaohelidai.com/page/";
 	//public static final String HOST = "http://192.168.199.220:8080/WanLianKuaiBo/";
 	public static final String CUSTOMER = "xhld";
 
@@ -133,6 +134,81 @@ public class NetTools {
 				super.run();
 				try {
 					HttpPost httpPost = new HttpPost(XHHOST + action);
+					HttpEntity entity;
+					List<NameValuePair> datas = new ArrayList<NameValuePair>();
+					if(param != null){
+						for(String set : param.keySet()){
+							BasicNameValuePair bnvp = new BasicNameValuePair(set, String.valueOf(param.get(set)));
+							datas.add(bnvp);
+						}
+					}
+					datas.add(new BasicNameValuePair("customer", CUSTOMER));
+					
+					XHUserInfo user = Tools.getXHUser(context);
+					datas.add(new BasicNameValuePair("uname", user.mobile));
+					datas.add(new BasicNameValuePair("upwd", user.password));
+					
+					entity = new UrlEncodedFormEntity(datas, HTTP.UTF_8);
+					httpPost.setEntity(entity);
+					HttpClient httpClient = new DefaultHttpClient();
+					
+					//连接超时
+					httpClient.getParams().setParameter(CoreConnectionPNames.CONNECTION_TIMEOUT, 30*1000);
+					//请求超时
+					httpClient.getParams().setParameter(CoreConnectionPNames.SO_TIMEOUT, 30 * 1000);
+					
+					HttpResponse httpResp = httpClient.execute(httpPost);
+					if (httpResp.getStatusLine().getStatusCode() == 200) {
+						String result = EntityUtils.toString(httpResp.getEntity(), "UTF-8");
+						Message msg = new Message();
+						msg.what = 0;
+						msg.obj = new JSONObject(result);
+						dataHandler.sendMessage(msg);
+						
+						if(readCache){
+							writeToXHCache(context, action, param, result);
+						}
+					}else{
+						Message msg = new Message();
+						msg.what = 1;
+						msg.obj = httpResp.getStatusLine().getStatusCode() + ":" + action +" 请求失败，请检查网络设置是否正常。";
+						dataHandler.sendMessage(msg);
+					}
+				} catch (Exception e) {
+					e.printStackTrace();
+					Message msg = new Message();
+					msg.what = 1;
+					msg.obj = e.getMessage();
+					dataHandler.sendMessage(msg);
+				}
+			}
+		}.start();
+	}
+	
+	public static void getXHDataFromNetwork2(final Context context,final String action,final Map<String, Object> param, final NetToolCallBack callback,final Boolean readCache) {
+		if(readCache){
+			getXHDataFromCache(context, action, param, callback);
+		}
+		
+		final Handler dataHandler = new Handler(){
+			@Override
+			public void handleMessage(Message msg) {
+				super.handleMessage(msg);
+				if(callback == null || msg == null || msg.obj == null) return;
+				if (msg.what == 0) {
+					callback.callBack((JSONObject) msg.obj);
+				} else {
+					callback.error(msg.obj.toString());
+				}
+			}
+		};
+		
+		new Thread(){
+			@Override
+			public void run() {
+				super.run();
+				try {
+					HttpPost httpPost = new HttpPost(XHHOST2 + action);
 					HttpEntity entity;
 					List<NameValuePair> datas = new ArrayList<NameValuePair>();
 					if(param != null){

@@ -52,7 +52,7 @@ import com.xhld.utils.Tools;
  */
 public class CallFragment extends Fragment implements OnClickListener,OnItemClickListener,OnLongClickListener{
 
-	private MainActivity mActivity;
+	public MainActivity mActivity;
 	private int[] typesName = new int[]{-1,0,1,2};
 	private View view = null;
 	private List<CallRecordModel> callRecordsList;
@@ -65,10 +65,15 @@ public class CallFragment extends Fragment implements OnClickListener,OnItemClic
 	public LinearLayout keyboardLayout;
 	private ListView callRecordsListView;
 	private CallRecordsItemAdapter callRecordsItemAdapter;
+
+	public static CallFragment getInstance(MainActivity activity){
+		CallFragment instance = new CallFragment(); 
+		instance.mActivity = activity;
+        return instance;
+
+    }
 	
-	public CallFragment(MainActivity activity){
-		this.mActivity = activity;
-	}
+	public CallFragment(){}
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -260,7 +265,9 @@ public class CallFragment extends Fragment implements OnClickListener,OnItemClic
 		@Override
 		public void beforeTextChanged(CharSequence s, int start, int count,int after) {}
 		@Override
-		public void afterTextChanged(Editable s) {}
+		public void afterTextChanged(Editable arg0) {
+			
+		}
 	};
 	
 	private void search(CharSequence number){
